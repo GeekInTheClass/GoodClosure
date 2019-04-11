@@ -1,0 +1,36 @@
+import UIKit
+
+
+let inputStringArr: [String] = ["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"]
+let resArr : [String] = ["Prodo님이 들어왔습니다.", "Ryan님이 들어왔습니다.", "Prodo님이 나갔습니다.", "Prodo님이 들어왔습니다."]
+var actions : [String] = []
+var uids : [String] = []
+var Nicks : [String] = []
+
+//1번 문제 - input String Arr 을 쪼개서 print
+inputStringArr.map({ (s : String) -> Void in
+        var sarr = s.components(separatedBy: " ")
+        actions.append(sarr[0])
+        uids.append(sarr[1])
+        Nicks.append(sarr[2])
+    }
+)
+
+print(actions)
+print(uids)
+print(Nicks)
+
+//2번문제 - actions 에서 Enter를 들어왔습니다 로, Leave를 나갔습니다 로 바꿔서 Print
+actions.map( { (action : String) -> String in
+    if (action == "Enter"){
+        return "들어왔습니다."
+    }
+    else {
+      return "나갔습니다."
+    }
+    }
+)
+
+print(actions)
+
+
