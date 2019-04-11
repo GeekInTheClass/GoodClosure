@@ -8,29 +8,28 @@ var uids : [String] = []
 var Nicks : [String] = []
 
 //1번 문제 - input String Arr 을 쪼개서 print
-inputStringArr.map({ (s : String) -> Void in
-        var sarr = s.components(separatedBy: " ")
+
+for num in 0...4 {
+    var inputStringArrMember = inputStringArr[num]
+    var sarr = inputStringArrMember.components(separatedBy: " ")
+    if(sarr.count==3){
         actions.append(sarr[0])
         uids.append(sarr[1])
         Nicks.append(sarr[2])
     }
-)
+    if(sarr.count==2){
+        actions.append(sarr[0])
+        uids.append(sarr[1])
+        
+    }
+}
 
 print(actions)
 print(uids)
 print(Nicks)
 
-//2번문제 - actions 에서 Enter를 들어왔습니다 로, Leave를 나갔습니다 로 바꿔서 Print
-actions.map( { (action : String) -> String in
-    if (action == "Enter"){
-        return "들어왔습니다."
-    }
-    else {
-      return "나갔습니다."
-    }
-    }
-)
 
-print(actions)
+//2번문제 - actions 에서 Enter를 들어왔습니다 로, Leave를 나갔습니다 로 바꿔서 Print
+
 
 
